@@ -1,0 +1,25 @@
+{
+  "name": "ztm_nasa_mission_control_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "server": "npm run watch --prefix server",
+    "test": "npm run test --prefix server && npm run test --prefix client",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
+    "cluster": "pm2 start scr/server.js -i max"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "morgan": "^1.10.1",
+    "pm2": "^6.0.14"
+  }
+}
