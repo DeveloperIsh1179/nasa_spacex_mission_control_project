@@ -13,6 +13,9 @@ RUN npm run install-server --omit=dev
 COPY client/ client
 RUN npm run build --prefix client
 
+
+RUN rm -rf client/node_modules
+
 COPY server/ server/
 
 USER node
